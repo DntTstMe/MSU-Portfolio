@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { validateEmail } from "../../utils/helpers";
 
 function Contact() {
@@ -10,24 +11,38 @@ function Contact() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "email") setEmail(value);
-    else if (name === "userName") setUserName(value);
-    else setMessage(value);
+    switch (name) {
+      case "email":
+        setEmail(value);
+        break;
+      case "userName":
+        setUserName(value);
+        break;
+      case "message":
+        setMessage(value);
+        break;
+      default:
+        break;
+    }
   };
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (!validateEmail(email) || !userName || !message) {
-      setErrorMessage("Please fill in all the required fields correctly.");
+    if (!validateEmail(email) || !userName) {
+      setErrorMessage("Email or Name is invalid");
       return;
     }
 
-    setErrorMessage(""); // Clear error message
+    if (!message.trim().length) {
+      setErrorMessage("Message is required.");
+      return;
+    }
+
     setUserName("");
     setMessage("");
     setEmail("");
   };
+
   return (
     <section id="reach-out" className="contact">
       <div className="flex-row">
@@ -104,4 +119,3 @@ function Contact() {
 }
 
 export default Contact;
-

@@ -2,29 +2,30 @@ import React, { useEffect } from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 function Nav({ currentTab, handleTabChange }) {
-  // Create a mapping of tab names and their corresponding labels
-  const tabs = [
-    { name: 'About', label: 'About' },
-    { name: 'Portfolio', label: 'Portfolio' },
-    { name: 'Contact', label: 'Contact' },
-    { name: 'Resume', label: 'Resume' },
+  const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Contact', href: '#contact' },
+    { name: 'Resume', href: '#resume' }
   ];
 
   useEffect(() => {
-    document.title = capitalizeFirstLetter(currentTab);
+    document.title = capitalizeFirstLetter(currentTab.name);
   }, [currentTab]);
 
   return (
     <nav>
       <ul className="nav nav-tabs">
-        {tabs.map((tab) => (
-          <li className="nav-item" key={tab.name}>
+        {navLinks.map((link, index) => (
+          <li className="nav-item" key={index}>
             <a
-              href={`#${tab.name.toLowerCase()}`}
-              onClick={() => handleTabChange(tab.name)}
-              className={currentTab === tab.name ? 'nav-link active' : 'nav-link'}
+              href={link.href}
+              onClick={() => handleTabChange(link.name)}
+              className={
+                currentTab === link.name ? 'nav-link active' : 'nav-link'
+              }
             >
-              {tab.label}
+              {link.name}
             </a>
           </li>
         ))}
@@ -34,3 +35,4 @@ function Nav({ currentTab, handleTabChange }) {
 }
 
 export default Nav;
+

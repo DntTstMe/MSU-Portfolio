@@ -10,10 +10,9 @@ function Header({ currentTab, handleTabChange }) {
       </nav>
       <section className="hero">
         <div className="hero-cta">
-          <h2>Welcome</h2>
+          <h2>Howdy!</h2>
           <p>
-            Welcome to Alex's portfolio page built with React. Here, you can find
-            a small sample of the projects she has worked on over the course of the program.
+          Welcome to my page! Feel free to explore and check out my projects.
           </p>
         </div>
       </section>
