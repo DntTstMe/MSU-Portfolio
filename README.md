@@ -56,11 +56,17 @@ THEN I am presented with text or icon links to the developer’s GitHub and Link
 ABOUT
 ![Alt text](image-1.png)
 
+
+
 PORTFOLIO
 ![Alt text](image-2.png)
 
+
+
 CONTACT
 ![Alt text](image-3.png)
+
+
 
 RESUME
 ![Alt text](image-4.png)
