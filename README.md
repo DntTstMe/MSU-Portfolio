@@ -53,23 +53,23 @@ WHEN I view the footer
 THEN I am presented with text or icon links to the developer’s GitHub and LinkedIn profiles, and their profile on a third platform (Stack Overflow, Twitter) 
 
 ## Screenshots
-ABOUT
+## ABOUT
+![Alt text](image.png)
+
+
+
+## PORTFOLIO
 ![Alt text](image-1.png)
 
 
 
-PORTFOLIO
+## CONTACT
 ![Alt text](image-2.png)
 
 
 
-CONTACT
+## RESUME
 ![Alt text](image-3.png)
-
-
-
-RESUME
-![Alt text](image-4.png)
 
  ## License
 
